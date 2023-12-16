@@ -94,14 +94,22 @@ img {
   display: inline-flex;
   align-items: flex-start;
   padding: 24px 0;
+  position: relative;
 }
 .link:hover,
 .link:focus {
   color: #404bbf;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link.active {
+  position: relative;
 }
 .link.active::after {
   content: "";
+  position: absolute;
   display: block;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -129,6 +137,8 @@ img {
 .adress:hover,
 .adress:focus {
   color: #404bbf;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .central-block {
 }
@@ -183,6 +193,8 @@ img {
 .page-button:hover,
 .page-button:focus {
   background-color: #404bbf;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-factors {
   padding: 120px 0;
@@ -338,6 +350,18 @@ img {
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-wrapper {
+  position: relative;
+  color: var(--CLOUD, #f4f4fd);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  overflow: hidden;
 }
 .list-portf {
   color: #f4f4fd;
@@ -346,6 +370,29 @@ img {
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0.32px;
+}
+.overlay {
+  position: absolute;
+  padding: 40px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: var(--CLOUD, #f4f4fd);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  transform: translateY(100%);
+  background: var(--IRIS, #4d5ae5);
+}
+.portfolio-items:hover .overlay {
+  transform: translateY(0);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .information-portf {
   padding: 32px 16px;
